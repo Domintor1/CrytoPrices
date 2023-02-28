@@ -1,5 +1,9 @@
 Live Crypto Prices Responsive Project
 
+LINK TO PROJECT SITE - https://livecryptoprices2023.netlify.app/
+
+### Currently working on search functionality
+
 Responsive application displaying the current top 20 cryptocurrencies and a summary of how they are performing through using multiple metrics. TailiwindCSS was used for styling. Recharts is also used to graphically show how each coin is performing in the last 30 days and how each are trending.
 
 API used for data-
