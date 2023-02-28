@@ -1,10 +1,10 @@
 import { render } from "react-dom";
 import { StrictMode } from "react";
-import Navbar from "./Navbar";
+import Navbar from "./components/Navbar";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ExtraTest from "./ExtraTest";
-import Details from "./CoinDetails";
+import ExtraTest from "./components/ExtraTest";
+import Details from "./components/CoinDetails";
 
 const queryClient = new QueryClient({
   defaultOptions: {

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-import fetchTopCryptos from "./fetchData/fetchTopCryptos";
+import fetchTopCryptos from "../fetchData/fetchTopCryptos";
 
 const ExtraTest = () => {
   const topCryptos = useQuery(["topCryptos"], fetchTopCryptos);

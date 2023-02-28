@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
-import fetchSelectedCrypto from "./fetchData/fetchSelectedCrypto";
-import fetchChartData from "./fetchData/fetchChartData";
+import fetchSelectedCrypto from "../fetchData/fetchSelectedCrypto";
+import fetchChartData from "../fetchData/fetchChartData";
 import {
   AreaChart,
   Area,
