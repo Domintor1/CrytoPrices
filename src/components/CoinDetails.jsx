@@ -42,7 +42,7 @@ const Details = () => {
     console.log(priceData);
     return {
       name: formatDate,
-      uv: priceData,
+      price: RoundNum(priceData),
     };
   });
 
@@ -83,7 +83,7 @@ const Details = () => {
             <Tooltip />
             <Area
               type="monotone"
-              dataKey="uv"
+              dataKey="price"
               stroke="#8884d8"
               fill="#8884d8"
             />
