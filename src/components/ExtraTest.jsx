@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import fetchTopCryptos from "../fetchData/fetchTopCryptos";
 
 const ExtraTest = () => {
   const topCryptos = useQuery(["topCryptos"], fetchTopCryptos);
+  const [searchValue, setSearchValue] = useState("");
   console.log(topCryptos?.data, "data");
 
   function RoundNum(num) {
@@ -18,16 +20,43 @@ const ExtraTest = () => {
     return num > 0 ? "+" + num : num;
   }
 
+  let filteredData = topCryptos?.data.filter((search) => {
+    return search.name.includes(searchValue.toLowerCase());
+  });
+
   return (
     <div>
       <section className="m-0 p-0 lg:m-8 p-10">
-        <h1 className="text-center text-lg font-mono font-bold">
-          Cryptocurrency Price List
-        </h1>
-        <h2 className="text-center text-lg font-mono font-bold">
-          {" "}
-          Top 20 coins by market cap
-        </h2>
+        <div>
+          <h1 className="text-center text-2xl font-mono font-extrabold">
+            Cryptocurrency Price List
+          </h1>
+          <h2 className="text-center text-lg font-mono font-bold">
+            {" "}
+            Top 20 coins by market cap
+          </h2>
+          <form>
+            <label
+              for="default-search"
+              class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+            >
+              Search
+            </label>
+            <div class="flex relative justify-center">
+              <input
+                type="search"
+                id="default-search"
+                class="flex justify-center w-80 p-4 pl-10 text-sm text-gray-900 border rounded-lg bg-gray-50"
+                placeholder="Search all cryptocurrencies"
+                required
+                value={searchValue}
+                onChange={(e) => {
+                  setSearchValue(e.target.value);
+                }}
+              />
+            </div>
+          </form>
+        </div>
       </section>
 
       <main className="flex justify-center">
@@ -41,7 +70,7 @@ const ExtraTest = () => {
             </tr>
           </thead>
           <tbody>
-            {topCryptos.data?.slice(0, 20).map((coin, index) => {
+            {filteredData.slice(0, 20).map((coin, index) => {
               return (
                 <tr key={index}>
                   <td>
