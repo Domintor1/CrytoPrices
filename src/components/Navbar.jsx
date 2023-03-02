@@ -14,6 +14,9 @@ const Navbar = () => {
               placeholder="Search..."
             />
           </div>
+          <button className="bg-gray-300 text-black hover:bg-slate-600 font-bold py-1 px-4 rounded mx-5">
+            Search
+          </button>
           <button
             data-collapse-toggle="navbar-search"
             type="button"
@@ -49,6 +52,7 @@ const Navbar = () => {
               className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Search..."
             />
+            <button>Search</button>
           </div>
         </div>
       </div>

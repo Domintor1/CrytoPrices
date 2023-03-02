@@ -13,7 +13,7 @@ import {
 } from "recharts";
 
 function RoundNum(num) {
-  return Math.round(num * 100) / 100;
+  return Math.round(num * 10000) / 10000;
 }
 
 function BillionToReadable(num) {

@@ -7,7 +7,7 @@ const ExtraTest = () => {
   console.log(topCryptos?.data, "data");
 
   function RoundNum(num) {
-    return Math.round(num * 100) / 100;
+    return Math.round(num * 1000) / 1000;
   }
 
   function BillionToReadable(num) {
@@ -79,15 +79,15 @@ const ExtraTest = () => {
                   </td>
                   <td className="text-lg">${RoundNum(coin.current_price)}</td>
                   <td
-                    className={`text-sm
+                    className={`text-md
                         ${
                           coin.price_change_percentage_24h > 0
-                            ? "text-green-500 font-semibold"
-                            : "text-red-700"
-                        }
+                            ? "text-green-500 font-bold"
+                            : "text-red-700 font-semibold"
+                        } 
                       `}
                   >
-                    {PlusOrMinus(RoundNum(coin.price_change_percentage_24h))}
+                    {PlusOrMinus(RoundNum(coin.price_change_percentage_24h))}%
                   </td>
                   <td className="hidden md:table-cell">
                     ${BillionToReadable(coin.market_cap)}B
