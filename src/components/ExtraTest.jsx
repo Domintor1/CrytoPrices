@@ -1,11 +1,11 @@
-import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import fetchTopCryptos from "../fetchData/fetchTopCryptos";
 
 const ExtraTest = () => {
   const topCryptos = useQuery(["topCryptos"], fetchTopCryptos);
-  const [searchValue, setSearchValue] = useState("");
+  let [searchValue, setSearchValue] = useState("");
   console.log(topCryptos?.data, "data");
 
   function RoundNum(num) {
@@ -20,8 +20,11 @@ const ExtraTest = () => {
     return num > 0 ? "+" + num : num;
   }
 
-  let filteredData = topCryptos?.data.filter((search) => {
-    return search.name.includes(searchValue.toLowerCase());
+  let filteredData = topCryptos?.data?.filter((search) => {
+    return (
+      search.symbol.toLowerCase().includes(searchValue.toLowerCase()) ||
+      search.name.toLowerCase().includes(searchValue.toLowerCase())
+    );
   });
 
   return (
@@ -70,7 +73,7 @@ const ExtraTest = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredData.slice(0, 20).map((coin, index) => {
+            {filteredData?.slice(0, 20).map((coin, index) => {
               return (
                 <tr key={index}>
                   <td>
