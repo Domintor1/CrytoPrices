@@ -39,7 +39,6 @@ const Details = () => {
     const newDate = new Date(dateData);
     const formatDate = newDate.toISOString().split("T")[0];
 
-    console.log(priceData);
     return {
       Name: formatDate,
       Price$: RoundNum(priceData),
