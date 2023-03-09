@@ -56,6 +56,7 @@ const ExtraTest = () => {
                 onChange={(e) => {
                   setSearchValue(e.target.value);
                 }}
+                data-testid="defaultFilter"
               />
             </div>
           </form>

@@ -41,8 +41,8 @@ const Details = () => {
 
     console.log(priceData);
     return {
-      name: formatDate,
-      price: RoundNum(priceData),
+      Name: formatDate,
+      Price$: RoundNum(priceData),
     };
   });
 
@@ -78,12 +78,12 @@ const Details = () => {
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
+            <XAxis dataKey="Name" />
             <YAxis />
             <Tooltip />
             <Area
               type="monotone"
-              dataKey="price"
+              dataKey="Price$"
               stroke="#8884d8"
               fill="#8884d8"
             />
