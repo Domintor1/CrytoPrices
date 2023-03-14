@@ -32,8 +32,6 @@ const Details = () => {
     return item;
   });
 
-  console.log(data1, "this is the chart data");
-
   const data = data1?.map((item) => {
     const [dateData, priceData] = item;
     const newDate = new Date(dateData);

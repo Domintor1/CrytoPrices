@@ -6,8 +6,6 @@ import fetchTopCryptos from "../fetchData/fetchTopCryptos";
 const ExtraTest = () => {
   const topCryptos = useQuery(["topCryptos"], fetchTopCryptos);
   let [searchValue, setSearchValue] = useState("");
-  console.log(topCryptos?.data, "data");
-
   function RoundNum(num) {
     return Math.round(num * 1000) / 1000;
   }
@@ -40,16 +38,16 @@ const ExtraTest = () => {
           </h2>
           <form onSubmit={(e) => e.preventDefault()}>
             <label
-              for="default-search"
-              class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+              htmlFor="default-search"
+              className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
             >
               Search
             </label>
-            <div class="flex relative justify-center">
+            <div className="flex relative justify-center">
               <input
                 type="search"
                 id="default-search"
-                class="flex justify-center w-80 p-4 pl-10 text-sm text-gray-900 border rounded-lg bg-gray-50"
+                className="flex justify-center w-80 p-4 pl-10 text-sm text-gray-900 border rounded-lg bg-gray-50"
                 placeholder="Search all cryptocurrencies"
                 required
                 value={searchValue}
