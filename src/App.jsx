@@ -3,8 +3,8 @@ import { StrictMode } from "react";
 import Navbar from "./components/Navbar";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ExtraTest from "./components/ExtraTest";
 import Details from "./components/CoinDetails";
+import Home from "./components/Home";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,7 +23,7 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path="/details/:id" element={<Details />} />
-            <Route path="/" element={<ExtraTest />} />
+            <Route path="/" element={<Home />} />
           </Routes>
         </QueryClientProvider>
       </BrowserRouter>

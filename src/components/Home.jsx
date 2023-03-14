@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import fetchTopCryptos from "../fetchData/fetchTopCryptos";
 
-const ExtraTest = () => {
+const Home = () => {
   const topCryptos = useQuery(["topCryptos"], fetchTopCryptos);
   let [searchValue, setSearchValue] = useState("");
   function RoundNum(num) {
@@ -27,6 +27,10 @@ const ExtraTest = () => {
 
   return (
     <div>
+      <h1 className="text-red-700 font-extrabold text-2xl">
+        *Currently working on bug with API sometimes not fetching data in a
+        timely manner.*
+      </h1>
       <section className="m-0 p-0 lg:m-8 p-10">
         <div>
           <h1 className="text-center text-2xl font-mono font-extrabold">
@@ -133,4 +137,4 @@ const ExtraTest = () => {
   );
 };
 
-export default ExtraTest;
+export default Home;
