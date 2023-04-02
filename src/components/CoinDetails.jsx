@@ -11,6 +11,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { useEffect, useState } from "react";
 
 function RoundNum(num) {
   return Math.round(num * 10000) / 10000;
@@ -26,11 +27,27 @@ function MillionToReadable(num) {
 
 const Details = () => {
   const { id } = useParams();
+  const [coin, setCoin] = useState("");
   const results = useQuery(["selectedCrypto", id], fetchSelectedCrypto);
   const chartData = useQuery(["chartData", id], fetchChartData);
   const data1 = chartData?.data?.prices.map((item) => {
     return item;
   });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetch(
+          `https://api.coingecko.com/api/v3/coins/${id}`
+        );
+        const json = await data.json();
+        setCoin(json);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, [id]);
 
   const data = data1?.map((item) => {
     const [dateData, priceData] = item;

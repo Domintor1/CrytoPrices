@@ -28,8 +28,8 @@ const Home = () => {
   return (
     <div>
       <h1 className="text-red-700 font-extrabold text-2xl">
-        *Currently working on bug with API sometimes not fetching data in a
-        timely manner.*
+        *Currently working on CORS error bug with API used not giving the
+        correct credentials. {"\n"}
       </h1>
       <section className="m-0 p-0 lg:m-8 p-10">
         <div>

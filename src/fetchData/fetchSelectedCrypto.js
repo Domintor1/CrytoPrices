@@ -1,8 +1,7 @@
 const fetchSelectedCrypto = async ({ queryKey }) => {
   const id = queryKey[1];
   const fetchedCoins = await fetch(
-    `https://api.coingecko.com/api/v3/coins/${id}
-      `
+    `https://api.coingecko.com/api/v3/coins/${id}.json`
   );
   if (!fetchedCoins.ok) {
     throw new Error(`error fetching ${id} coins from API`);
